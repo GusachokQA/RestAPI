@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Suite">
+    <test name="Parallel Test" thread-count="2" parallel="classes">
+        <classes>
+            <class name="org.techmeskills.aqa5.auf.uiTests.SmokeTest1"/>
+            <class name="org.techmeskills.aqa5.auf.uiTests.SmokeTest2"/>
+        </classes>
+    </test>
+    <test name="Standart Test">
+        <classes>
+            <class name="org.techmeskills.aqa5.auf.uiTests.SmokeTest3"/>
+        </classes>
+    </test>
+</suite>
