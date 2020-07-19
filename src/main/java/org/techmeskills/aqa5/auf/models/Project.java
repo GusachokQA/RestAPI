@@ -4,8 +4,8 @@ public class Project {
     private String name;
     private String announcement;
     private boolean show_announcement;
-    private boolean is_completed;
     private int suite_mode;
+    private boolean is_completed;
 
     public static class Builder {
         private Project newProject;
@@ -38,7 +38,6 @@ public class Project {
             newProject.suite_mode = suite_mode;
             return this;
         }
-
         public Project build() {
             return newProject;
         }

@@ -4,7 +4,7 @@ package org.techmeskills.aqa5.auf.apiTests;
 import io.restassured.mapper.ObjectMapperType;
 import org.apache.http.HttpStatus;
 
-import org.techmeskills.aqa5.auf.baseEntity.BaseApiTest2;
+import org.techmeskills.aqa5.auf.baseEntity.BaseApiTest;
 import org.techmeskills.aqa5.auf.models.Project;
 import org.techmeskills.aqa5.auf.models.ProjectSimple;
 import org.techmeskills.aqa5.auf.models.ProjectTypes;
@@ -17,7 +17,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class apiMainTest4 extends BaseApiTest2 {
+public class apiMainTest4 extends BaseApiTest {
     int projectID;
 
     @Test

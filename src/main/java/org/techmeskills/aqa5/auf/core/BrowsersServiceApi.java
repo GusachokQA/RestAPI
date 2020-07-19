@@ -8,23 +8,23 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.techmeskills.aqa5.auf.utils.Waiters;
 
-public class BrowsersService {
+public class BrowsersServiceApi {
     private WebDriver driver = null;
     private DriverManagerType driverManagerType = null;
     private Waiters waiters;
     private String baseUrl;
 
-    public BrowsersService() {
-        ReadProperties readProperties = new ReadProperties();
-        baseUrl = readProperties.getURL();
+    public BrowsersServiceApi() {
+        ReadPropertiesApi readPropertiesApi = new ReadPropertiesApi();
+        baseUrl = readPropertiesApi.getURL();
 
-        switch (readProperties.getBrowserName().toLowerCase()) {
+        switch (readPropertiesApi.getBrowserName().toLowerCase()) {
             case "chrome":
                 driverManagerType = DriverManagerType.CHROME;
                 WebDriverManager.getInstance(driverManagerType).setup();
 
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.setHeadless(readProperties.isHeadless());
+                chromeOptions.setHeadless(readPropertiesApi.isHeadless());
                 chromeOptions.addArguments("--disable-gpu");
                 //chromeOptions.addArguments("--window-size=1920,1200");
                 chromeOptions.addArguments("--ignore-certificate-errors");
@@ -41,11 +41,11 @@ public class BrowsersService {
                 driver = new FirefoxDriver();
                 break;
             default:
-                System.out.println("Browser " + readProperties.getBrowserName() + " is not supported.");
+                System.out.println("Browser " + readPropertiesApi.getBrowserName() + " is not supported.");
                 break;
         }
 
-        waiters = new Waiters(driver, readProperties.getTimeOut());
+        waiters = new Waiters(driver, readPropertiesApi.getTimeOut());
     }
 
     public WebDriver getDriver() {

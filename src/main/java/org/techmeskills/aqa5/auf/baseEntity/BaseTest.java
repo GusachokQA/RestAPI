@@ -1,6 +1,5 @@
 package org.techmeskills.aqa5.auf.baseEntity;
 
-import org.openqa.selenium.WebDriver;
 import org.techmeskills.aqa5.auf.core.BrowsersService;
 import org.techmeskills.aqa5.auf.core.ReadProperties;
 import org.techmeskills.aqa5.auf.utils.Listener;
